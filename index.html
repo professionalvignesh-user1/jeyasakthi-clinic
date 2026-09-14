@@ -166,7 +166,7 @@
       transform: translateY(-1px);
     }
 
-    /* Top Utility Bar (Clean & Mobile Friendly) */
+    /* Top Utility Bar */
     .topbar {
       background-color: var(--navy-dark);
       color: #E2E8F0;
@@ -745,7 +745,7 @@
       color: var(--medical-blue);
     }
 
-    /* Dedicated Kidney Health Section (Mobile-Safe) */
+    /* Dedicated Kidney Health Section */
     .kidney-health-section {
       padding: 60px 0;
       background-color: #FFFFFF;
@@ -789,7 +789,6 @@
       flex-shrink: 0;
     }
     
-    /* Dedicated Mobile-Safe Button */
     .btn-kidney-cta {
       display: inline-flex;
       width: 100%;
@@ -1361,7 +1360,7 @@
 </head>
 <body>
 
-  <!-- Clean Mobile-Optimized Topbar -->
+  <!-- Topbar -->
   <div class="topbar">
     <div class="container topbar-content">
       <div class="topbar-left">
@@ -1383,7 +1382,7 @@
     </div>
   </div>
 
-  <!-- Sticky Header -->
+  <!-- Sticky Header with Fixed Dual-Icon Button -->
   <header>
     <div class="nav-container">
       <a href="#" class="brand" aria-label="Jeya Sakthi Clinic Home">
@@ -1410,7 +1409,8 @@
           Book a Consultation
         </a>
         <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Navigation Menu">
-          <i data-lucide="menu" id="menuIcon"></i>
+          <i data-lucide="menu" class="icon-hamburger"></i>
+          <i data-lucide="x" class="icon-close" style="display: none;"></i>
         </button>
       </div>
     </div>
@@ -1655,7 +1655,7 @@
     </div>
   </section>
 
-  <!-- Dedicated Kidney Health Section (Mobile Optimized CTA) -->
+  <!-- Dedicated Kidney Health Section -->
   <section class="kidney-health-section" id="kidney-care">
     <div class="container">
       <div class="kidney-split">
@@ -1673,7 +1673,6 @@
             <li class="factor-item"><span class="factor-dot"></span> Other underlying health conditions</li>
           </ul>
 
-          <!-- Fixed Overflow-Proof CTA Button -->
           <a href="#contact" class="btn btn-primary btn-kidney-cta">
             <i data-lucide="user-check"></i> Discuss Your Kidney Health With Our Doctor
           </a>
@@ -2143,27 +2142,33 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Mobile Hamburger Menu Toggle
+    // Fixed Mobile Hamburger Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
-    const menuIcon = document.getElementById('menuIcon');
+    const iconHamburger = menuToggle.querySelector('.icon-hamburger');
+    const iconClose = menuToggle.querySelector('.icon-close');
+
+    function setMenuState(isOpen) {
+      if (isOpen) {
+        mobileDrawer.classList.add('active');
+        iconHamburger.style.display = 'none';
+        iconClose.style.display = 'block';
+      } else {
+        mobileDrawer.classList.remove('active');
+        iconHamburger.style.display = 'block';
+        iconClose.style.display = 'none';
+      }
+    }
 
     menuToggle.addEventListener('click', () => {
-      const isOpen = mobileDrawer.classList.toggle('active');
-      if (isOpen) {
-        menuIcon.setAttribute('data-lucide', 'x');
-      } else {
-        menuIcon.setAttribute('data-lucide', 'menu');
-      }
-      lucide.createIcons();
+      const isOpen = mobileDrawer.classList.contains('active');
+      setMenuState(!isOpen);
     });
 
-    // Close drawer when link clicked
+    // Close drawer when any navigation link is clicked
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        mobileDrawer.classList.remove('active');
-        menuIcon.setAttribute('data-lucide', 'menu');
-        lucide.createIcons();
+        setMenuState(false);
       });
     });
 
