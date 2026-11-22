@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Jeya Sakthi Kidney Care & General Clinic | Dr. Vigneshwaran S | Thirumullaivoyal, Chennai</title>
-  <meta name="description" content="Jeya Sakthi Kidney Care & General Clinic led by Dr. Vigneshwaran S (MBBS, MD, DrNB Nephrology). Specialized kidney care, free kidney health calculators & general medical consultations in Thirumullaivoyal, serving Avadi, Ambattur & Chennai." />
+  <meta name="description" content="Jeya Sakthi Kidney Care & General Clinic led by Dr. Vigneshwaran S (MBBS, MD, DrNB Nephrology). Specialized kidney care, free kidney health calculators, South Indian CKD food guide & general medical consultations in Thirumullaivoyal, serving Avadi, Ambattur & Chennai." />
   
   <!-- Favicon / App Icons -->
   <link rel="icon" type="image/jpeg" href="clinic logo.jpeg" />
@@ -755,32 +755,59 @@
     @media (min-width: 992px) {
       .tools-section { padding: 90px 0; }
     }
+    .tools-category-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .cat-pill {
+      background: var(--bg-slate);
+      color: var(--navy);
+      border: 1px solid var(--border-subtle);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .cat-pill.active, .cat-pill:hover {
+      background: var(--medical-blue);
+      color: #FFFFFF;
+      border-color: var(--medical-blue);
+    }
     .tools-tabs {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 32px;
+      gap: 8px;
+      margin-bottom: 28px;
     }
     .tool-tab-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       background: #FFFFFF;
       color: var(--navy);
       border: 1px solid var(--border-subtle);
-      padding: 12px 20px;
+      padding: 10px 16px;
       border-radius: var(--radius-full);
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       cursor: pointer;
       transition: all 0.25s ease;
       box-shadow: var(--shadow-sm);
     }
+    .tool-tab-btn.hidden-cat {
+      display: none;
+    }
     .tool-tab-btn i {
-      width: 17px;
-      height: 17px;
+      width: 15px;
+      height: 15px;
       color: var(--medical-blue);
     }
     .tool-tab-btn:hover {
@@ -799,7 +826,7 @@
 
     .tool-panel {
       display: none;
-      max-width: 920px;
+      max-width: 940px;
       margin: 0 auto;
       background: #FFFFFF;
       border-radius: var(--radius-lg);
@@ -908,7 +935,7 @@
 
     .result-metric {
       font-family: var(--font-display);
-      font-size: 1.75rem;
+      font-size: 1.65rem;
       font-weight: 800;
       color: var(--navy);
       margin-bottom: 6px;
@@ -924,7 +951,7 @@
       gap: 10px;
     }
 
-    /* Risk Quiz Checklist */
+    /* Risk Quiz & Checklist Cards */
     .quiz-options {
       display: flex;
       flex-direction: column;
@@ -963,6 +990,177 @@
     .quiz-check-text span {
       font-size: 0.84rem;
       color: var(--text-muted);
+    }
+
+    /* South Indian Food Guide & Oxalate Cards */
+    .food-filter-bar {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    @media (min-width: 640px) {
+      .food-filter-bar { grid-template-columns: 1.5fr 1fr; }
+    }
+    .food-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 14px;
+      max-height: 440px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .food-item-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .food-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .food-item-header h5 {
+      font-size: 0.96rem;
+      color: var(--navy);
+    }
+    .food-cat-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: #FFFFFF;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+    .nutrient-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .n-pill {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: var(--radius-full);
+    }
+    .n-low { background: #DCFCE7; color: #166534; }
+    .n-mod { background: #FEF9C3; color: #854D0E; }
+    .n-high { background: #FEE2E2; color: #991B1B; }
+    .food-tip {
+      font-size: 0.82rem;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    /* Salt & Protein Tracker Bars */
+    .tracker-bars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 18px 0;
+      background: var(--bg-slate);
+      padding: 18px;
+      border-radius: var(--radius-md);
+    }
+    @media (min-width: 640px) {
+      .tracker-bars { grid-template-columns: 1fr 1fr; }
+    }
+    .progress-track {
+      width: 100%;
+      height: 12px;
+      background: #CBD5E1;
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      margin: 6px 0;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--medical-blue);
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+    .meal-log-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .logged-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      color: var(--navy);
+    }
+    .logged-chip button {
+      background: none;
+      border: none;
+      color: #DC2626;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    /* Trend Chart */
+    .trend-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .trend-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+    .svg-chart-wrap {
+      margin-top: 18px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      overflow-x: auto;
+    }
+
+    /* Medication Alert Cards */
+    .med-alert-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (min-width: 640px) {
+      .med-alert-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .med-card {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+    .med-card h5 {
+      color: #92400E;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .med-card p {
+      font-size: 0.85rem;
+      color: #78350F;
     }
 
     /* Urine Color Swatches */
@@ -1912,32 +2110,65 @@
     </div>
   </section>
 
-  <!-- Interactive Kidney Health Tools Section -->
+  <!-- Comprehensive Interactive Kidney Health Tools Section -->
   <section class="tools-section" id="health-tools">
     <div class="container">
       <div class="section-head">
         <span class="section-eyebrow">Interactive Patient Utilities</span>
-        <h2>Kidney Health Check &amp; Calculators</h2>
-        <p>Use these educational tools to check your estimated kidney function, screen risk factors, or verify blood pressure and blood sugar targets before your consultation.</p>
+        <h2>Kidney Health, Diet &amp; Lab Suite</h2>
+        <p>Explore 12 patient-friendly calculators, South Indian food guides, lab report interpreters, and visit checklists designed to support your kidney health.</p>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="tools-category-bar">
+        <button type="button" class="cat-pill active" data-cat="all">All 12 Tools</button>
+        <button type="button" class="cat-pill" data-cat="labs">Lab Calculators</button>
+        <button type="button" class="cat-pill" data-cat="diet">Diet &amp; Stones</button>
+        <button type="button" class="cat-pill" data-cat="screening">Screening &amp; Vitals</button>
+        <button type="button" class="cat-pill" data-cat="visit">Visit &amp; Safety</button>
       </div>
 
       <!-- Tool Selector Tabs -->
       <div class="tools-tabs" role="tablist">
-        <button class="tool-tab-btn active" data-tool="egfr-tool" role="tab">
-          <i data-lucide="calculator"></i> eGFR Calculator
+        <button class="tool-tab-btn active" data-tool="egfr-tool" data-category="labs" role="tab">
+          <i data-lucide="calculator"></i> 1. eGFR Calculator
         </button>
-        <button class="tool-tab-btn" data-tool="risk-tool" role="tab">
-          <i data-lucide="clipboard-check"></i> Kidney Risk Screener
+        <button class="tool-tab-btn" data-tool="uacr-tool" data-category="labs" role="tab">
+          <i data-lucide="flask-conical"></i> 2. Urine uACR
         </button>
-        <button class="tool-tab-btn" data-tool="vitals-tool" role="tab">
-          <i data-lucide="heart-pulse"></i> BP &amp; Sugar Checker
+        <button class="tool-tab-btn" data-tool="cg-tool" data-category="labs" role="tab">
+          <i data-lucide="scale"></i> 3. Cockcroft-Gault
         </button>
-        <button class="tool-tab-btn" data-tool="hydration-tool" role="tab">
-          <i data-lucide="droplets"></i> Hydration Guide
+        <button class="tool-tab-btn" data-tool="trend-tool" data-category="labs" role="tab">
+          <i data-lucide="trending-up"></i> 4. Lab Trend Chart
+        </button>
+        <button class="tool-tab-btn" data-tool="food-tool" data-category="diet" role="tab">
+          <i data-lucide="utensils"></i> 5. South Indian Food Guide
+        </button>
+        <button class="tool-tab-btn" data-tool="tracker-tool" data-category="diet" role="tab">
+          <i data-lucide="pie-chart"></i> 6. Salt &amp; Protein Tracker
+        </button>
+        <button class="tool-tab-btn" data-tool="oxalate-tool" data-category="diet" role="tab">
+          <i data-lucide="gem"></i> 7. Stone Oxalate Guide
+        </button>
+        <button class="tool-tab-btn" data-tool="hydration-tool" data-category="diet" role="tab">
+          <i data-lucide="droplets"></i> 8. Hydration &amp; Urine
+        </button>
+        <button class="tool-tab-btn" data-tool="risk-tool" data-category="screening" role="tab">
+          <i data-lucide="clipboard-check"></i> 9. Risk Screener
+        </button>
+        <button class="tool-tab-btn" data-tool="vitals-tool" data-category="screening" role="tab">
+          <i data-lucide="heart-pulse"></i> 10. BP &amp; Sugar Check
+        </button>
+        <button class="tool-tab-btn" data-tool="triage-tool" data-category="visit" role="tab">
+          <i data-lucide="alert-octagon"></i> 11. Symptom Triage
+        </button>
+        <button class="tool-tab-btn" data-tool="visit-tool" data-category="visit" role="tab">
+          <i data-lucide="file-check-2"></i> 12. Visit Checklist &amp; Meds
         </button>
       </div>
 
-      <!-- Tool 1: eGFR Calculator (CKD-EPI 2021) -->
+      <!-- TOOL 1: eGFR Calculator (CKD-EPI 2021) -->
       <div class="tool-panel active" id="egfr-tool">
         <div class="tool-header">
           <h3>eGFR Kidney Function Calculator (CKD-EPI 2021)</h3>
@@ -1990,11 +2221,332 @@
 
         <div class="tool-disclaimer">
           <i data-lucide="info"></i>
-          <span>Uses the standard 2021 CKD-EPI race-free creatinine equation for adults (18+). Lab values should always be interpreted alongside urine protein (ACR) and clinical history by a nephrologist.</span>
+          <span>Uses the standard 2021 CKD-EPI race-free creatinine equation for adults (18+). Lab values should always be interpreted alongside urine protein (uACR) and clinical history by a nephrologist.</span>
         </div>
       </div>
 
-      <!-- Tool 2: Kidney Risk Self-Assessment Quiz -->
+      <!-- TOOL 2: Urine Albumin-to-Creatinine Ratio (uACR) Interpreter -->
+      <div class="tool-panel" id="uacr-tool">
+        <div class="tool-header">
+          <h3>Urine Albumin-to-Creatinine Ratio (uACR) Interpreter</h3>
+          <p>Protein leakage in urine is often the earliest sign of kidney stress in diabetes or hypertension. Enter your report value below.</p>
+        </div>
+
+        <div class="tool-form-grid">
+          <div class="form-group">
+            <label for="uacr-mode">Input Method</label>
+            <select id="uacr-mode" class="form-control" onchange="toggleUacrInputs()">
+              <option value="direct">I already have the uACR Ratio on my report</option>
+              <option value="calc">Calculate from separate Urine Albumin &amp; Urine Creatinine</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="uacr-direct-group">
+            <label for="uacr-val">uACR Value (mg/g or mg/mmol)</label>
+            <div class="input-with-unit">
+              <input type="number" id="uacr-val" class="form-control" step="0.1" min="0" placeholder="e.g. 22" />
+              <select id="uacr-unit" class="form-control">
+                <option value="mgg">mg/g</option>
+                <option value="mgmmol">mg/mmol</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" id="uacr-alb-group" style="display:none;">
+            <label for="uacr-alb">Urine Microalbumin (mg/L)</label>
+            <input type="number" id="uacr-alb" class="form-control" step="0.1" min="0" placeholder="e.g. 35" />
+          </div>
+
+          <div class="form-group" id="uacr-creat-group" style="display:none;">
+            <label for="uacr-creat">Urine Creatinine (mg/dL)</label>
+            <input type="number" id="uacr-creat" class="form-control" step="0.1" min="1" placeholder="e.g. 110" />
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="interpretUACR()">
+          <i data-lucide="flask-conical"></i> Interpret uACR
+        </button>
+
+        <div class="tool-result-box" id="uacr-result">
+          <span class="result-badge" id="uacr-badge">Category</span>
+          <div class="result-metric" id="uacr-metric">-- mg/g</div>
+          <p class="result-desc" id="uacr-desc"></p>
+          <div class="result-actions">
+            <a href="#contact" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.88rem;">
+              Discuss Urine Report with Dr. Vigneshwaran S
+            </a>
+          </div>
+        </div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span>KDIGO Albuminuria Categories: A1 (&lt; 30 mg/g), A2 (30–300 mg/g), A3 (&gt; 300 mg/g). Temporary elevations can occur after heavy exercise, fever, or urinary tract infection.</span>
+        </div>
+      </div>
+
+      <!-- TOOL 3: Cockcroft-Gault Creatinine Clearance Calculator -->
+      <div class="tool-panel" id="cg-tool">
+        <div class="tool-header">
+          <h3>Cockcroft-Gault Creatinine Clearance Calculator</h3>
+          <p>Estimates Creatinine Clearance (CrCl in mL/min) incorporating body weight—commonly referenced for medication dosing adjustments.</p>
+        </div>
+
+        <div class="tool-form-grid">
+          <div class="form-group">
+            <label for="cg-age">Age (Years)</label>
+            <input type="number" id="cg-age" class="form-control" min="18" max="110" placeholder="e.g. 52" />
+          </div>
+
+          <div class="form-group">
+            <label for="cg-sex">Biological Sex</label>
+            <select id="cg-sex" class="form-control">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cg-weight">Body Weight (kg)</label>
+            <input type="number" id="cg-weight" class="form-control" step="0.5" min="25" max="220" placeholder="e.g. 68" />
+          </div>
+
+          <div class="form-group">
+            <label for="cg-creat">Serum Creatinine (mg/dL)</label>
+            <input type="number" id="cg-creat" class="form-control" step="0.01" min="0.1" max="30" placeholder="e.g. 1.2" />
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="calculateCG()">
+          <i data-lucide="scale"></i> Calculate Creatinine Clearance
+        </button>
+
+        <div class="tool-result-box" id="cg-result">
+          <span class="result-badge" id="cg-badge">Estimated CrCl</span>
+          <div class="result-metric" id="cg-value">-- mL/min</div>
+          <p class="result-desc" id="cg-desc"></p>
+        </div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span>Never adjust or stop prescribed medications on your own. Always share your Creatinine Clearance with your doctor before starting antibiotics, painkillers, or diabetes medications.</span>
+        </div>
+      </div>
+
+      <!-- TOOL 4: Lab Report Trend Tracker -->
+      <div class="tool-panel" id="trend-tool">
+        <div class="tool-header">
+          <h3>Serum Creatinine &amp; Lab Trend Visualizer</h3>
+          <p>Enter 2 to 4 past Serum Creatinine readings from your lab reports to visualize whether your kidney values are stable over time.</p>
+        </div>
+
+        <div class="trend-rows" id="trend-rows-container">
+          <div class="trend-row">
+            <input type="date" class="form-control trend-date" />
+            <input type="number" step="0.01" min="0.1" max="25" class="form-control trend-val" placeholder="Creatinine (mg/dL) e.g. 1.1" />
+            <span style="font-size:0.8rem; color:var(--text-muted);">Report 1</span>
+          </div>
+          <div class="trend-row">
+            <input type="date" class="form-control trend-date" />
+            <input type="number" step="0.01" min="0.1" max="25" class="form-control trend-val" placeholder="Creatinine (mg/dL) e.g. 1.2" />
+            <span style="font-size:0.8rem; color:var(--text-muted);">Report 2</span>
+          </div>
+          <div class="trend-row">
+            <input type="date" class="form-control trend-date" />
+            <input type="number" step="0.01" min="0.1" max="25" class="form-control trend-val" placeholder="Creatinine (optional)" />
+            <span style="font-size:0.8rem; color:var(--text-muted);">Report 3</span>
+          </div>
+          <div class="trend-row">
+            <input type="date" class="form-control trend-date" />
+            <input type="number" step="0.01" min="0.1" max="25" class="form-control trend-val" placeholder="Creatinine (optional)" />
+            <span style="font-size:0.8rem; color:var(--text-muted);">Report 4</span>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="plotLabTrend()">
+          <i data-lucide="trending-up"></i> Generate Trend Chart
+        </button>
+
+        <div class="tool-result-box" id="trend-result">
+          <span class="result-badge" id="trend-badge">Trend Summary</span>
+          <div class="result-metric" id="trend-summary">--</div>
+          <p class="result-desc" id="trend-desc"></p>
+          <div class="svg-chart-wrap" id="trend-svg-container"></div>
+        </div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span>Consistent testing at the same laboratory helps ensure accurate comparison across dates. Bring all original reports to your clinic consultation.</span>
+        </div>
+      </div>
+
+      <!-- TOOL 5: South Indian Kidney-Friendly Food Guide -->
+      <div class="tool-panel" id="food-tool">
+        <div class="tool-header">
+          <h3>South Indian Kidney-Friendly Food Guide</h3>
+          <p>Search everyday South Indian foods to check their Potassium, Phosphorus, and Sodium levels for Chronic Kidney Disease (CKD) meal planning.</p>
+        </div>
+
+        <div class="food-filter-bar">
+          <input type="text" id="food-search-input" class="form-control" placeholder="Search food (e.g. Idli, Sambar, Banana, Keerai, Coconut)..." oninput="renderFoodGuide()" />
+          <select id="food-potassium-filter" class="form-control" onchange="renderFoodGuide()">
+            <option value="all">All Potassium Levels</option>
+            <option value="Low">Low Potassium Only</option>
+            <option value="Moderate">Moderate Potassium</option>
+            <option value="High">High Potassium (Limit/Avoid)</option>
+          </select>
+        </div>
+
+        <div class="food-cards-grid" id="food-guide-grid"></div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span>Dietary restrictions depend on your CKD stage and blood potassium/phosphorus levels. Leaching (soaking &amp; boiling vegetables and discarding the water) can reduce potassium in tubers and greens.</span>
+        </div>
+      </div>
+
+      <!-- TOOL 6: Daily Salt (Sodium) & Protein Tracker -->
+      <div class="tool-panel" id="tracker-tool">
+        <div class="tool-header">
+          <h3>Daily Salt (Sodium) &amp; Protein Meal Tracker</h3>
+          <p>Log typical Indian meals to check how close you are to the standard kidney-protective sodium target (&lt; 2,000 mg/day).</p>
+        </div>
+
+        <div class="tool-form-grid">
+          <div class="form-group">
+            <label for="meal-select">Select Food / Meal Item to Add</label>
+            <select id="meal-select" class="form-control">
+              <option value="Idli (2 pcs) + Mint Chutney|240|5">Idli (2 pcs) + Mint Chutney (~240 mg Na, 5g Protein)</option>
+              <option value="Plain Dosa (1) + Mild Sambar|480|7">Plain Dosa (1) + Mild Sambar (~480 mg Na, 7g Protein)</option>
+              <option value="Steamed White Rice (1 cup) + Rasam|390|4">Steamed Rice (1 cup) + Rasam (~390 mg Na, 4g Protein)</option>
+              <option value="Curd Rice (1 bowl, low salt)|210|7">Curd Rice (1 bowl, low salt) (~210 mg Na, 7g Protein)</option>
+              <option value="Chapati (2) + Vegetable Kurma|420|8">Chapati (2) + Vegetable Kurma (~420 mg Na, 8g Protein)</option>
+              <option value="Egg White Omelette (2 egg whites)|120|7">Egg White Omelette (2 whites) (~120 mg Na, 7g Protein)</option>
+              <option value="Fish Curry / Grilled Fish (100g)|350|20">Fish Curry / Grilled Fish (100g) (~350 mg Na, 20g Protein)</option>
+              <option value="Pickle / Papad (1 serving)|650|1">Pickle or Papad (1 serving) (~650 mg Na, 1g Protein)</option>
+              <option value="Bakery Puff / Salted Mixture (1 pack)|520|4">Bakery Puff / Salted Mixture (~520 mg Na, 4g Protein)</option>
+              <option value="Filter Coffee / Tea (1 cup)|45|2">Filter Coffee / Tea (1 cup) (~45 mg Na, 2g Protein)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="protein-target">Your Daily Protein Target (grams)</label>
+            <input type="number" id="protein-target" class="form-control" value="50" min="20" max="150" onchange="updateMealTrackerUI()" />
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-primary" onclick="addMealItem()">
+            <i data-lucide="plus-circle"></i> Add Item to Today's Log
+          </button>
+          <button type="button" class="btn btn-secondary" onclick="clearMealLog()">
+            Reset Log
+          </button>
+        </div>
+
+        <div class="tracker-bars">
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:0.86rem; font-weight:600;">
+              <span>Daily Sodium Intake</span>
+              <span id="sodium-total-label">0 / 2,000 mg</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="sodium-bar"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex; justify-content:space-between; font-size:0.86rem; font-weight:600;">
+              <span>Daily Protein Intake</span>
+              <span id="protein-total-label">0 / 50 g</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" id="protein-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="meal-log-list" id="meal-log-chips"></div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span>1 teaspoon of table salt contains ~2,300 mg of sodium. Non-dialysis CKD patients often require moderate protein restriction (0.6–0.8 g/kg/day), whereas dialysis patients need higher protein.</span>
+        </div>
+      </div>
+
+      <!-- TOOL 7: High-Oxalate Food Checker (Kidney Stones) -->
+      <div class="tool-panel" id="oxalate-tool">
+        <div class="tool-header">
+          <h3>Kidney Stone Oxalate Food Checker</h3>
+          <p>For patients prone to calcium oxalate kidney stones, check oxalate levels in common foods and learn smart dietary pairings.</p>
+        </div>
+
+        <div class="food-filter-bar">
+          <input type="text" id="oxalate-search" class="form-control" placeholder="Search item (e.g. Spinach, Almonds, Tea, Tomato, Curd)..." oninput="renderOxalateGuide()" />
+          <select id="oxalate-filter" class="form-control" onchange="renderOxalateGuide()">
+            <option value="all">All Oxalate Levels</option>
+            <option value="High">High Oxalate (Limit)</option>
+            <option value="Moderate">Moderate Oxalate</option>
+            <option value="Low">Low Oxalate (Stone-Friendly)</option>
+          </select>
+        </div>
+
+        <div class="food-cards-grid" id="oxalate-guide-grid"></div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span><strong>Key Tip for Stone Prevention:</strong> Pair moderate-oxalate meals with a small serving of dietary calcium (such as curd/buttermilk) so calcium binds oxalate in the stomach rather than the kidneys, and drink enough water to pass 2+ liters of urine daily.</span>
+        </div>
+      </div>
+
+      <!-- TOOL 8: Daily Hydration & Urine Color Guide -->
+      <div class="tool-panel" id="hydration-tool">
+        <div class="tool-header">
+          <h3>Daily Hydration Estimator &amp; Urine Color Guide</h3>
+          <p>Estimate general daily fluid needs for healthy kidneys and compare urine color indicators.</p>
+        </div>
+
+        <div class="tool-form-grid">
+          <div class="form-group">
+            <label for="hydro-weight">Body Weight (kg)</label>
+            <input type="number" id="hydro-weight" class="form-control" min="20" max="200" placeholder="e.g. 68" />
+          </div>
+
+          <div class="form-group">
+            <label for="hydro-activity">Daily Climate / Activity Level</label>
+            <select id="hydro-activity" class="form-control">
+              <option value="normal">Normal / Indoor Routine</option>
+              <option value="warm">Warm Weather / Outdoor Work (Chennai Climate)</option>
+              <option value="active">Regular Exercise / Heavy Sweating</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="calculateHydration()">
+          <i data-lucide="droplets"></i> Estimate Daily Water Intake
+        </button>
+
+        <div class="tool-result-box" id="hydro-result">
+          <span class="result-badge badge-normal">General Healthy Adult Estimate</span>
+          <div class="result-metric" id="hydro-value">-- Liters / day</div>
+          <p class="result-desc" id="hydro-desc"></p>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <h4 style="font-size: 0.96rem; margin-bottom: 6px;">Quick Urine Hydration Color Guide</h4>
+          <div class="urine-scale-grid">
+            <div class="urine-swatch" style="background: #FEFCE8;">Pale Straw<br><span style="font-weight:400; color:#475569;">Well Hydrated</span></div>
+            <div class="urine-swatch" style="background: #FEF08A;">Transparent Yellow<br><span style="font-weight:400; color:#475569;">Normal</span></div>
+            <div class="urine-swatch" style="background: #FDE047;">Dark Yellow<br><span style="font-weight:400; color:#475569;">Drink Water Soon</span></div>
+            <div class="urine-swatch" style="background: #F59E0B; color:#FFFFFF;">Amber / Honey<br><span style="font-weight:400; color:#FFFBEB;">Dehydrated</span></div>
+          </div>
+        </div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="alert-circle"></i>
+          <span><strong>Important Medical Note:</strong> If you have Chronic Kidney Disease (CKD), heart failure, leg swelling, or are on dialysis, your doctor may prescribe a strict daily fluid limit. Do not increase water intake without consulting your doctor.</span>
+        </div>
+      </div>
+
+      <!-- TOOL 9: Kidney Risk Self-Assessment Quiz -->
       <div class="tool-panel" id="risk-tool">
         <div class="tool-header">
           <h3>Kidney Health Risk Self-Assessment</h3>
@@ -2072,7 +2624,7 @@
         </div>
       </div>
 
-      <!-- Tool 3: BP & Blood Sugar Kidney-Target Checker -->
+      <!-- TOOL 10: BP & Blood Sugar Kidney-Target Checker -->
       <div class="tool-panel" id="vitals-tool">
         <div class="tool-header">
           <h3>Blood Pressure &amp; Blood Sugar Kidney-Target Checker</h3>
@@ -2125,54 +2677,141 @@
         </div>
       </div>
 
-      <!-- Tool 4: Daily Hydration & Urine Color Guide -->
-      <div class="tool-panel" id="hydration-tool">
+      <!-- TOOL 11: Symptom Urgency Triage Tool -->
+      <div class="tool-panel" id="triage-tool">
         <div class="tool-header">
-          <h3>Daily Hydration Estimator &amp; Urine Color Guide</h3>
-          <p>Estimate general daily fluid needs for healthy kidneys and compare urine color indicators.</p>
+          <h3>Kidney &amp; Urinary Symptom Urgency Checker</h3>
+          <p>Check any current symptoms below to understand whether you should visit a hospital emergency room immediately or book an evening clinic consultation.</p>
         </div>
 
-        <div class="tool-form-grid">
-          <div class="form-group">
-            <label for="hydro-weight">Body Weight (kg)</label>
-            <input type="number" id="hydro-weight" class="form-control" min="20" max="200" placeholder="e.g. 68" />
-          </div>
+        <div class="quiz-options">
+          <label class="quiz-check-card">
+            <input type="checkbox" class="triage-cb" data-level="emergency" data-label="Sudden drop in urine or inability to pass urine" />
+            <div class="quiz-check-text">
+              <strong>Very Little or No Urine Output for 12+ Hours</strong>
+              <span>Sudden oliguria/anuria requires urgent medical evaluation.</span>
+            </div>
+          </label>
 
-          <div class="form-group">
-            <label for="hydro-activity">Daily Climate / Activity Level</label>
-            <select id="hydro-activity" class="form-control">
-              <option value="normal">Normal / Indoor Routine</option>
-              <option value="warm">Warm Weather / Outdoor Work (Chennai Climate)</option>
-              <option value="active">Regular Exercise / Heavy Sweating</option>
-            </select>
-          </div>
+          <label class="quiz-check-card">
+            <input type="checkbox" class="triage-cb" data-level="emergency" data-label="Shortness of breath or chest tightness with swelling" />
+            <div class="quiz-check-text">
+              <strong>Shortness of Breath, Difficulty Lying Flat, or Severe Swelling</strong>
+              <span>Can indicate acute fluid overload needing immediate hospital care.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="triage-cb" data-level="emergency" data-label="Severe back/flank pain with high fever or chills" />
+            <div class="quiz-check-text">
+              <strong>Severe Side/Back Pain Accompanied by High Fever, Chills, or Vomiting</strong>
+              <span>May indicate an obstructed kidney stone or acute kidney infection (pyelonephritis).</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="triage-cb" data-level="routine" data-label="Mild ankle/facial puffiness" />
+            <div class="quiz-check-text">
+              <strong>Gradual Puffiness Around Eyes in the Morning or Mild Ankle Swelling</strong>
+              <span>Warrants a scheduled nephrology consultation and urine/blood testing.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="triage-cb" data-level="routine" data-label="Foamy urine or frequent nighttime urination" />
+            <div class="quiz-check-text">
+              <strong>Persistent Frothy/Foamy Urine or Waking Frequently at Night to Urinate</strong>
+              <span>Commonly evaluated during an outpatient clinic consultation.</span>
+            </div>
+          </label>
         </div>
 
-        <button type="button" class="btn btn-primary" onclick="calculateHydration()">
-          <i data-lucide="droplets"></i> Estimate Daily Water Intake
+        <button type="button" class="btn btn-primary" onclick="evaluateTriage()">
+          <i data-lucide="alert-octagon"></i> Check Recommended Action
         </button>
 
-        <div class="tool-result-box" id="hydro-result">
-          <span class="result-badge badge-normal">General Healthy Adult Estimate</span>
-          <div class="result-metric" id="hydro-value">-- Liters / day</div>
-          <p class="result-desc" id="hydro-desc"></p>
+        <div class="tool-result-box" id="triage-result">
+          <span class="result-badge" id="triage-badge">Guidance</span>
+          <div class="result-metric" id="triage-title">--</div>
+          <p class="result-desc" id="triage-desc"></p>
+          <div class="result-actions" id="triage-actions"></div>
         </div>
 
-        <div style="margin-top: 24px;">
-          <h4 style="font-size: 0.98rem; margin-bottom: 6px;">Quick Urine Hydration Color Guide</h4>
-          <div class="urine-scale-grid">
-            <div class="urine-swatch" style="background: #FEFCE8;">Pale Straw<br><span style="font-weight:400; color:#475569;">Well Hydrated</span></div>
-            <div class="urine-swatch" style="background: #FEF08A;">Transparent Yellow<br><span style="font-weight:400; color:#475569;">Normal</span></div>
-            <div class="urine-swatch" style="background: #FDE047;">Dark Yellow<br><span style="font-weight:400; color:#475569;">Drink Water Soon</span></div>
-            <div class="urine-swatch" style="background: #F59E0B; color:#FFFFFF;">Amber / Honey<br><span style="font-weight:400; color:#FFFBEB;">Dehydrated</span></div>
+        <div class="tool-disclaimer">
+          <i data-lucide="alert-triangle"></i>
+          <span>This tool is for educational guidance only and does not replace a doctor's clinical examination. In any life-threatening emergency, go directly to the nearest 24/7 hospital emergency department.</span>
+        </div>
+      </div>
+
+      <!-- TOOL 12: First-Visit Checklist & Medication Safety Alert -->
+      <div class="tool-panel" id="visit-tool">
+        <div class="tool-header">
+          <h3>Consultation Preparation Checklist &amp; Medication Safety</h3>
+          <p>Tick off items as you gather them for your appointment at Jeya Sakthi Clinic (6:30 PM – 10:30 PM).</p>
+        </div>
+
+        <div class="quiz-options" id="visit-checklist-box">
+          <label class="quiz-check-card">
+            <input type="checkbox" class="visit-cb" id="chk-blood" onchange="saveVisitChecklist()" />
+            <div class="quiz-check-text">
+              <strong>Recent Blood Test Reports</strong>
+              <span>Serum Creatinine, Blood Urea, Electrolytes (Sodium/Potassium), HbA1c, and Hemoglobin.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="visit-cb" id="chk-urine" onchange="saveVisitChecklist()" />
+            <div class="quiz-check-text">
+              <strong>Urine Examination &amp; Protein Reports</strong>
+              <span>Urine Routine &amp; Microscopy, Urine PCR / uACR, or 24-hour urine protein reports.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="visit-cb" id="chk-scan" onchange="saveVisitChecklist()" />
+            <div class="quiz-check-text">
+              <strong>Ultrasound KUB or CT Scan Films/Reports</strong>
+              <span>Any previous kidney, ureter, and bladder imaging reports.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="visit-cb" id="chk-meds" onchange="saveVisitChecklist()" />
+            <div class="quiz-check-text">
+              <strong>Current Prescription &amp; Tablet Strips</strong>
+              <span>Bring all blood pressure, diabetes, pain, or supplement strips you currently take.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="visit-cb" id="chk-log" onchange="saveVisitChecklist()" />
+            <div class="quiz-check-text">
+              <strong>Home Blood Pressure &amp; Sugar Logbook</strong>
+              <span>Notes of readings taken over the past 1–2 weeks.</span>
+            </div>
+          </label>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <h4 style="font-size: 1.02rem; margin-bottom: 6px; color: var(--navy);">Kidney Medication Safety Reminders</h4>
+          <div class="med-alert-grid">
+            <div class="med-card">
+              <h5 style="color:#991B1B;"><i data-lucide="alert-circle" style="width:16px;height:16px;"></i> Over-the-Counter Painkillers (NSAIDs)</h5>
+              <p>Frequent self-medication with painkillers (such as ibuprofen, diclofenac, aceclofenac, or combination pain tablets) can reduce kidney blood flow. Always ask your doctor for kidney-safe pain relief.</p>
+            </div>
+            <div class="med-card">
+              <h5 style="color:#854D0E;"><i data-lucide="alert-triangle" style="width:16px;height:16px;"></i> Unverified Herbal &amp; Gym Supplements</h5>
+              <p>Some unregulated herbal powders, weight-loss mixes, or high-dose protein/creatine supplements may contain heavy metals or strain impaired kidneys. Disclose all supplements during your visit.</p>
+            </div>
           </div>
         </div>
 
         <div class="tool-disclaimer">
-          <i data-lucide="alert-circle"></i>
-          <span><strong>Important Medical Note:</strong> If you have Chronic Kidney Disease (CKD), heart failure, swelling, or are on dialysis, your doctor may prescribe a strict daily fluid limit. Do not increase water intake without consulting your doctor.</span>
+          <i data-lucide="info"></i>
+          <span>Your checklist progress is saved automatically on this device browser so you can review it before leaving for the clinic.</span>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -2602,7 +3241,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about-doctor">About Doctor</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#health-tools">Kidney Health Tools</a></li>
+            <li><a href="#health-tools">Kidney Health Suite</a></li>
             <li><a href="#kidney-care">Kidney Care</a></li>
             <li><a href="#faqs">FAQs</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -2706,9 +3345,34 @@
       });
     });
 
-    // Health Tools Tab Switcher
+    // Health Tools Category Filter & Tab Switcher
+    const catPills = document.querySelectorAll('.cat-pill');
     const tabBtns = document.querySelectorAll('.tool-tab-btn');
     const toolPanels = document.querySelectorAll('.tool-panel');
+
+    catPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const selectedCat = pill.getAttribute('data-cat');
+        catPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        let firstVisibleTab = null;
+        tabBtns.forEach(btn => {
+          const btnCat = btn.getAttribute('data-category');
+          if (selectedCat === 'all' || btnCat === selectedCat) {
+            btn.classList.remove('hidden-cat');
+            if (!firstVisibleTab) firstVisibleTab = btn;
+          } else {
+            btn.classList.add('hidden-cat');
+          }
+        });
+
+        const activeBtn = document.querySelector('.tool-tab-btn.active');
+        if (activeBtn && activeBtn.classList.contains('hidden-cat') && firstVisibleTab) {
+          firstVisibleTab.click();
+        }
+      });
+    });
 
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -2789,7 +3453,359 @@
       document.getElementById('egfr-result').classList.add('visible');
     }
 
-    // 2. Kidney Risk Self-Assessment
+    // 2. Urine uACR Interpreter
+    function toggleUacrInputs() {
+      const mode = document.getElementById('uacr-mode').value;
+      document.getElementById('uacr-direct-group').style.display = mode === 'direct' ? 'flex' : 'none';
+      document.getElementById('uacr-alb-group').style.display = mode === 'calc' ? 'flex' : 'none';
+      document.getElementById('uacr-creat-group').style.display = mode === 'calc' ? 'flex' : 'none';
+    }
+
+    function interpretUACR() {
+      const mode = document.getElementById('uacr-mode').value;
+      let acrMgG = 0;
+
+      if (mode === 'direct') {
+        const val = parseFloat(document.getElementById('uacr-val').value);
+        const unit = document.getElementById('uacr-unit').value;
+        if (isNaN(val) || val < 0) {
+          alert('Please enter a valid uACR value.');
+          return;
+        }
+        acrMgG = unit === 'mgmmol' ? val * 8.84 : val;
+      } else {
+        const alb = parseFloat(document.getElementById('uacr-alb').value);
+        const creat = parseFloat(document.getElementById('uacr-creat').value);
+        if (isNaN(alb) || alb < 0 || !creat || creat <= 0) {
+          alert('Please enter valid Urine Microalbumin (mg/L) and Urine Creatinine (mg/dL) values.');
+          return;
+        }
+        acrMgG = (alb / creat) * 100;
+      }
+
+      const rounded = Math.round(acrMgG * 10) / 10;
+      const badgeEl = document.getElementById('uacr-badge');
+      let desc = '';
+
+      if (rounded < 30) {
+        badgeEl.textContent = 'Category A1 — Normal to Mildly Increased';
+        badgeEl.className = 'result-badge badge-normal';
+        desc = 'A uACR below 30 mg/g indicates normal urinary albumin excretion. Continue routine annual screening if you have diabetes or high blood pressure.';
+      } else if (rounded <= 300) {
+        badgeEl.textContent = 'Category A2 — Moderately Increased (Microalbuminuria)';
+        badgeEl.className = 'result-badge badge-moderate';
+        desc = 'A uACR between 30 and 300 mg/g indicates moderate protein leakage. Kidney-protective medications and strict BP/sugar control can often reduce or stabilize this.';
+      } else {
+        badgeEl.textContent = 'Category A3 — Severely Increased (Macroalbuminuria)';
+        badgeEl.className = 'result-badge badge-high';
+        desc = 'A uACR above 300 mg/g indicates significant protein leakage in urine. A dedicated nephrology evaluation with Dr. Vigneshwaran S is strongly recommended.';
+      }
+
+      document.getElementById('uacr-metric').textContent = `${rounded} mg/g`;
+      document.getElementById('uacr-desc').textContent = desc;
+      document.getElementById('uacr-result').classList.add('visible');
+    }
+
+    // 3. Cockcroft-Gault Calculator
+    function calculateCG() {
+      const age = parseFloat(document.getElementById('cg-age').value);
+      const sex = document.getElementById('cg-sex').value;
+      const weight = parseFloat(document.getElementById('cg-weight').value);
+      const creat = parseFloat(document.getElementById('cg-creat').value);
+
+      if (!age || age < 18 || !weight || weight <= 0 || !creat || creat <= 0) {
+        alert('Please enter valid age, weight, and serum creatinine values.');
+        return;
+      }
+
+      let crcl = ((140 - age) * weight) / (72 * creat);
+      if (sex === 'female') crcl *= 0.85;
+      const rounded = Math.round(crcl);
+
+      const badgeEl = document.getElementById('cg-badge');
+      let desc = '';
+
+      if (rounded >= 90) {
+        badgeEl.textContent = 'Normal Clearance Range';
+        badgeEl.className = 'result-badge badge-normal';
+        desc = 'Estimated Creatinine Clearance is within the standard adult range.';
+      } else if (rounded >= 60) {
+        badgeEl.textContent = 'Mildly Reduced Clearance';
+        badgeEl.className = 'result-badge badge-mild';
+        desc = 'Mildly reduced clearance. Most standard medications remain safe, though periodic checks are helpful.';
+      } else if (rounded >= 30) {
+        badgeEl.textContent = 'Moderate Reduction — Dose Review Needed';
+        badgeEl.className = 'result-badge badge-moderate';
+        desc = 'Several antibiotics, diabetes tablets, and pain medications require dose adjustment below 60 mL/min. Show this value to your doctor.';
+      } else {
+        badgeEl.textContent = 'Significant Reduction — Nephrology Care Advised';
+        badgeEl.className = 'result-badge badge-high';
+        desc = 'Significant reduction in clearance. Medication review by a nephrologist is strongly recommended.';
+      }
+
+      document.getElementById('cg-value').textContent = `${rounded} mL/min`;
+      document.getElementById('cg-desc').textContent = desc;
+      document.getElementById('cg-result').classList.add('visible');
+    }
+
+    // 4. Lab Report Trend Visualizer
+    function plotLabTrend() {
+      const dates = document.querySelectorAll('.trend-date');
+      const vals = document.querySelectorAll('.trend-val');
+      const points = [];
+
+      for (let i = 0; i < vals.length; i++) {
+        const v = parseFloat(vals[i].value);
+        if (!isNaN(v) && v > 0) {
+          const d = dates[i].value || `Report ${points.length + 1}`;
+          points.push({ date: d, val: v });
+        }
+      }
+
+      if (points.length < 2) {
+        alert('Please enter at least 2 Serum Creatinine readings to view a trend.');
+        return;
+      }
+
+      points.sort((a, b) => a.date.localeCompare(b.date));
+
+      const first = points[0].val;
+      const last = points[points.length - 1].val;
+      const diff = (last - first).toFixed(2);
+      const badgeEl = document.getElementById('trend-badge');
+      let desc = '';
+
+      if (Math.abs(last - first) <= 0.15) {
+        badgeEl.textContent = 'Relatively Stable Trend';
+        badgeEl.className = 'result-badge badge-normal';
+        desc = `Your Serum Creatinine remained relatively steady (${first} to ${last} mg/dL across ${points.length} reports). Continue your regular follow-ups.`;
+      } else if (last > first) {
+        badgeEl.textContent = 'Upward Trend Detected';
+        badgeEl.className = 'result-badge badge-high';
+        desc = `Your Serum Creatinine increased by +${diff} mg/dL (from ${first} to ${last} mg/dL). Please bring these reports to Dr. Vigneshwaran S for evaluation.`;
+      } else {
+        badgeEl.textContent = 'Improving / Downward Trend';
+        badgeEl.className = 'result-badge badge-normal';
+        desc = `Your Serum Creatinine decreased by ${diff} mg/dL (from ${first} to ${last} mg/dL). Share these results at your follow-up consultation.`;
+      }
+
+      const W = 540, H = 190, padL = 48, padR = 30, padT = 26, padB = 36;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+      const minV = Math.max(0, Math.min(...points.map(p => p.val)) - 0.3);
+      const maxV = Math.max(...points.map(p => p.val)) + 0.3;
+      const rangeV = maxV - minV || 1;
+
+      const coords = points.map((p, idx) => {
+        const x = padL + (idx / (points.length - 1)) * plotW;
+        const y = padT + plotH - ((p.val - minV) / rangeV) * plotH;
+        return { x, y, val: p.val, date: p.date };
+      });
+
+      const polyPoints = coords.map(c => `${c.x},${c.y}`).join(' ');
+      let circlesSvg = '';
+      coords.forEach(c => {
+        circlesSvg += `
+          <circle cx="${c.x}" cy="${c.y}" r="5.5" fill="#1363DF" stroke="#FFFFFF" stroke-width="2" />
+          <text x="${c.x}" y="${c.y - 10}" text-anchor="middle" font-size="11" font-weight="700" fill="#0B2545">${c.val}</text>
+          <text x="${c.x}" y="${H - 10}" text-anchor="middle" font-size="10" fill="#64748B">${c.date}</text>
+        `;
+      });
+
+      const svgHtml = `
+        <svg viewBox="0 0 ${W} ${H}" style="width:100%; max-width:560px; height:auto; display:block; margin:0 auto;">
+          <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="#CBD5E1" stroke-width="1.5" />
+          <line x1="${padL}" y1="${padT + plotH}" x2="${W - padR}" y2="${padT + plotH}" stroke="#CBD5E1" stroke-width="1.5" />
+          <polyline fill="none" stroke="#1363DF" stroke-width="3" points="${polyPoints}" />
+          ${circlesSvg}
+        </svg>
+      `;
+
+      document.getElementById('trend-summary').textContent = `${first} → ${last} mg/dL`;
+      document.getElementById('trend-desc').textContent = desc;
+      document.getElementById('trend-svg-container').innerHTML = svgHtml;
+      document.getElementById('trend-result').classList.add('visible');
+    }
+
+    // 5. South Indian Kidney-Friendly Food Guide
+    const southIndianFoods = [
+      { name: 'Steamed Idli (Plain)', cat: 'Breakfast', k: 'Low', p: 'Low', na: 'Low', tip: 'Light, steamed, and easy to digest. Pair with low-salt mint or onion chutney.' },
+      { name: 'Plain / Kal Dosa', cat: 'Breakfast', k: 'Low', p: 'Low', na: 'Low', tip: 'Good staple option; avoid excess table salt in batter and limit spicy/salty podi.' },
+      { name: 'Rava Upma / Pongal (Low Salt)', cat: 'Breakfast', k: 'Low', p: 'Moderate', na: 'Low', tip: 'Use minimal salt and avoid adding cashews if phosphorus/oxalate is restricted.' },
+      { name: 'Steamed White Rice', cat: 'Staple', k: 'Low', p: 'Low', na: 'Low', tip: 'Lower in potassium and phosphorus than brown/unpolished rice for advanced CKD.' },
+      { name: 'Thin Drumstick / Radish Sambar', cat: 'Gravy', k: 'Moderate', p: 'Moderate', na: 'Moderate', tip: 'Use dilute dal and skip high-potassium vegetables like potato or raw banana.' },
+      { name: 'Pepper / Jeera Rasam', cat: 'Gravy', k: 'Low', p: 'Low', na: 'Moderate', tip: 'Good flavoring option; prepare with minimal salt and avoid concentrated tamarind paste.' },
+      { name: 'Coconut Chutney', cat: 'Side', k: 'High', p: 'Moderate', na: 'Low', tip: 'Fresh coconut is high in potassium. Limit to 1–2 teaspoons if on a low-potassium diet.' },
+      { name: 'Spinach / Araikeerai / Mulakeerai', cat: 'Greens', k: 'High', p: 'Moderate', na: 'Low', tip: 'High in potassium & oxalates. Boil in excess water and discard water before cooking.' },
+      { name: 'Bottle Gourd (Sorakkai) / Snake Gourd (Pudalangai)', cat: 'Vegetable', k: 'Low', p: 'Low', na: 'Low', tip: 'Excellent kidney-friendly local vegetables for kootu or poriyal.' },
+      { name: 'Apple / Papaya / Guava (Desi)', cat: 'Fruit', k: 'Low', p: 'Low', na: 'Low', tip: 'Safer fruit choices (1 small portion/day) compared to bananas or oranges.' },
+      { name: 'Banana (Ripe / Yelakki / Nendran)', cat: 'Fruit', k: 'High', p: 'Low', na: 'Low', tip: 'Very high in potassium. Avoid if your blood potassium is borderline or elevated.' },
+      { name: 'Tender Coconut Water (Elaneer)', cat: 'Beverage', k: 'High', p: 'Low', na: 'Moderate', tip: 'Contains very high potassium. Strictly avoid in Stage 3b–5 CKD unless cleared by doctor.' },
+      { name: 'Homemade Curd / Buttermilk', cat: 'Dairy', k: 'Moderate', p: 'Moderate', na: 'Low', tip: 'Limit milk/curd to ~150–200 ml/day if phosphorus restriction is advised.' },
+      { name: 'Pickles (Oorugai) & Appalam / Papad', cat: 'Condiment', k: 'Moderate', p: 'Moderate', na: 'High', tip: 'Extremely high in hidden sodium—raises blood pressure and causes fluid retention.' }
+    ];
+
+    function getPillClass(level) {
+      if (level === 'Low') return 'n-low';
+      if (level === 'Moderate') return 'n-mod';
+      return 'n-high';
+    }
+
+    function renderFoodGuide() {
+      const searchInput = document.getElementById('food-search-input');
+      const filterSelect = document.getElementById('food-potassium-filter');
+      const grid = document.getElementById('food-guide-grid');
+      if (!grid) return;
+
+      const query = (searchInput ? searchInput.value : '').toLowerCase().trim();
+      const kFilter = filterSelect ? filterSelect.value : 'all';
+
+      const filtered = southIndianFoods.filter(item => {
+        const matchesText = item.name.toLowerCase().includes(query) || item.cat.toLowerCase().includes(query) || item.tip.toLowerCase().includes(query);
+        const matchesK = kFilter === 'all' || item.k === kFilter;
+        return matchesText && matchesK;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; padding:20px;">No matching foods found. Try searching "Idli", "Rice", "Fruit", or "Sambar".</p>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="food-item-card">
+          <div class="food-item-header">
+            <h5>${item.name}</h5>
+            <span class="food-cat-tag">${item.cat}</span>
+          </div>
+          <div class="nutrient-pills">
+            <span class="n-pill ${getPillClass(item.k)}">K+: ${item.k}</span>
+            <span class="n-pill ${getPillClass(item.p)}">Phos: ${item.p}</span>
+            <span class="n-pill ${getPillClass(item.na)}">Salt: ${item.na}</span>
+          </div>
+          <p class="food-tip">${item.tip}</p>
+        </div>
+      `).join('');
+    }
+    renderFoodGuide();
+
+    // 6. Daily Salt & Protein Tracker
+    let loggedMeals = [];
+
+    function addMealItem() {
+      const val = document.getElementById('meal-select').value;
+      const parts = val.split('|');
+      loggedMeals.push({
+        name: parts[0],
+        sodium: parseInt(parts[1], 10),
+        protein: parseInt(parts[2], 10)
+      });
+      updateMealTrackerUI();
+    }
+
+    function removeMealItem(index) {
+      loggedMeals.splice(index, 1);
+      updateMealTrackerUI();
+    }
+
+    function clearMealLog() {
+      loggedMeals = [];
+      updateMealTrackerUI();
+    }
+
+    function updateMealTrackerUI() {
+      const proteinTarget = parseInt(document.getElementById('protein-target').value, 10) || 50;
+      const totalNa = loggedMeals.reduce((sum, m) => sum + m.sodium, 0);
+      const totalPro = loggedMeals.reduce((sum, m) => sum + m.protein, 0);
+
+      document.getElementById('sodium-total-label').textContent = `${totalNa.toLocaleString()} / 2,000 mg`;
+      document.getElementById('protein-total-label').textContent = `${totalPro} / ${proteinTarget} g`;
+
+      const naPct = Math.min(100, Math.round((totalNa / 2000) * 100));
+      const proPct = Math.min(100, Math.round((totalPro / proteinTarget) * 100));
+
+      const naBar = document.getElementById('sodium-bar');
+      naBar.style.width = naPct + '%';
+      naBar.style.backgroundColor = totalNa > 2000 ? '#DC2626' : (totalNa > 1600 ? '#F59E0B' : '#1363DF');
+
+      const proBar = document.getElementById('protein-bar');
+      proBar.style.width = proPct + '%';
+      proBar.style.backgroundColor = totalPro > proteinTarget ? '#F59E0B' : '#0D9488';
+
+      const chipsEl = document.getElementById('meal-log-chips');
+      chipsEl.innerHTML = loggedMeals.map((m, idx) => `
+        <span class="logged-chip">
+          ${m.name} (${m.sodium}mg Na, ${m.protein}g P)
+          <button type="button" onclick="removeMealItem(${idx})" aria-label="Remove item">×</button>
+        </span>
+      `).join('');
+    }
+
+    // 7. Kidney Stone Oxalate Checker
+    const oxalateFoods = [
+      { name: 'Spinach (Palak) & Amaranth Greens', level: 'High', tip: 'Very high oxalate. Boil and discard water or substitute with low-oxalate cabbage/cauliflower.' },
+      { name: 'Almonds, Cashews & Peanuts', level: 'High', tip: 'High in oxalate. Limit handfuls; choose roasted chana or pumpkin seeds in moderation instead.' },
+      { name: 'Dark Chocolate & Cocoa Powder', level: 'High', tip: 'Concentrated oxalate source—avoid frequent intake if prone to calcium oxalate stones.' },
+      { name: 'Strong Black Tea / Iced Tea', level: 'High', tip: 'Black tea contains notable oxalates. Adding milk binds some oxalate; limit to 1–2 mild cups/day.' },
+      { name: 'Beetroot & Sweet Potato', level: 'High', tip: 'High oxalate root vegetables; replace with radish, carrot, or bottle gourd.' },
+      { name: 'Okra (Ladies Finger / Vendakkai)', level: 'Moderate', tip: 'Moderate oxalate; enjoy in normal portions alongside curd/buttermilk.' },
+      { name: 'Tomatoes (Cooked in Gravy)', level: 'Moderate', tip: 'Moderate oxalate—safe in normal cooking quantities; avoid concentrated tomato juices.' },
+      { name: 'Lemon / Lime Juice (Unsweetened)', level: 'Low', tip: 'Rich in natural citrate, which actively helps block kidney stone crystal formation!' },
+      { name: 'Curd, Milk & Buttermilk', level: 'Low', tip: 'Dietary calcium binds oxalate in the gut and lowers stone recurrence risk.' },
+      { name: 'Watermelon, Cucumber & Muskmelon', level: 'Low', tip: 'Low oxalate and high water content—great choices for stone prevention.' }
+    ];
+
+    function renderOxalateGuide() {
+      const searchEl = document.getElementById('oxalate-search');
+      const filterEl = document.getElementById('oxalate-filter');
+      const grid = document.getElementById('oxalate-guide-grid');
+      if (!grid) return;
+
+      const q = (searchEl ? searchEl.value : '').toLowerCase().trim();
+      const lvl = filterEl ? filterEl.value : 'all';
+
+      const list = oxalateFoods.filter(f => {
+        const matchQ = f.name.toLowerCase().includes(q) || f.tip.toLowerCase().includes(q);
+        const matchL = lvl === 'all' || f.level === lvl;
+        return matchQ && matchL;
+      });
+
+      grid.innerHTML = list.map(f => `
+        <div class="food-item-card">
+          <div class="food-item-header">
+            <h5>${f.name}</h5>
+            <span class="n-pill ${getPillClass(f.level)}">${f.level} Oxalate</span>
+          </div>
+          <p class="food-tip">${f.tip}</p>
+        </div>
+      `).join('');
+    }
+    renderOxalateGuide();
+
+    // 8. Daily Hydration Estimator
+    function calculateHydration() {
+      const weight = parseFloat(document.getElementById('hydro-weight').value);
+      const activity = document.getElementById('hydro-activity').value;
+
+      if (!weight || weight < 20 || weight > 250) {
+        alert('Please enter a valid body weight in kilograms.');
+        return;
+      }
+
+      let baseLiters = weight * 0.032;
+      if (activity === 'warm') baseLiters += 0.4;
+      if (activity === 'active') baseLiters += 0.75;
+
+      const low = (baseLiters - 0.2).toFixed(1);
+      const high = (baseLiters + 0.2).toFixed(1);
+
+      document.getElementById('hydro-value').textContent = `${low} – ${high} Liters / day`;
+      document.getElementById('hydro-desc').textContent =
+        `For a healthy adult weighing ${weight} kg without fluid restrictions, spreading approximately ${low} to ${high} liters of water evenly across the day supports normal waste filtration and helps reduce kidney stone risk.`;
+
+      document.getElementById('hydro-result').classList.add('visible');
+    }
+
+    // 9. Kidney Risk Self-Assessment
     function evaluateRisk() {
       const checkboxes = document.querySelectorAll('.risk-factor-cb:checked');
       let score = 0;
@@ -2830,7 +3846,7 @@
       document.getElementById('risk-result').classList.add('visible');
     }
 
-    // 3. BP & Blood Sugar Checker
+    // 10. BP & Blood Sugar Checker
     function checkVitals() {
       const sys = parseFloat(document.getElementById('bp-sys').value);
       const dia = parseFloat(document.getElementById('bp-dia').value);
@@ -2894,29 +3910,74 @@
       document.getElementById('vitals-result').classList.add('visible');
     }
 
-    // 4. Daily Hydration Estimator
-    function calculateHydration() {
-      const weight = parseFloat(document.getElementById('hydro-weight').value);
-      const activity = document.getElementById('hydro-activity').value;
-
-      if (!weight || weight < 20 || weight > 250) {
-        alert('Please enter a valid body weight in kilograms.');
+    // 11. Symptom Urgency Triage
+    function evaluateTriage() {
+      const checked = document.querySelectorAll('.triage-cb:checked');
+      if (checked.length === 0) {
+        alert('Please select at least one symptom option to check recommended next steps.');
         return;
       }
 
-      let baseLiters = weight * 0.032;
-      if (activity === 'warm') baseLiters += 0.4;
-      if (activity === 'active') baseLiters += 0.75;
+      let hasEmergency = false;
+      const symptoms = [];
+      checked.forEach(cb => {
+        if (cb.getAttribute('data-level') === 'emergency') hasEmergency = true;
+        symptoms.push(cb.getAttribute('data-label'));
+      });
 
-      const low = (baseLiters - 0.2).toFixed(1);
-      const high = (baseLiters + 0.2).toFixed(1);
+      const badgeEl = document.getElementById('triage-badge');
+      const titleEl = document.getElementById('triage-title');
+      const descEl = document.getElementById('triage-desc');
+      const actionsEl = document.getElementById('triage-actions');
 
-      document.getElementById('hydro-value').textContent = `${low} – ${high} Liters / day`;
-      document.getElementById('hydro-desc').textContent =
-        `For a healthy adult weighing ${weight} kg without fluid restrictions, spreading approximately ${low} to ${high} liters of water evenly across the day supports normal waste filtration and helps reduce kidney stone risk.`;
+      if (hasEmergency) {
+        badgeEl.textContent = 'Urgent Medical Attention Recommended';
+        badgeEl.className = 'result-badge badge-high';
+        titleEl.textContent = 'Visit Nearest 24/7 Hospital Emergency Department';
+        descEl.textContent = 'You selected one or more urgent warning symptoms (such as sudden drop in urine output, breathing difficulty with swelling, or high fever with flank pain). Do not wait for evening outpatient hours—seek immediate emergency hospital care.';
+        actionsEl.innerHTML = `
+          <a href="tel:108" class="btn btn-primary" style="background:#DC2626; padding:10px 18px; font-size:0.88rem;">
+            Call Emergency Ambulance (108)
+          </a>
+        `;
+      } else {
+        badgeEl.textContent = 'Outpatient Clinic Evaluation Advised';
+        badgeEl.className = 'result-badge badge-moderate';
+        titleEl.textContent = 'Schedule an Evening Consultation at Jeya Sakthi Clinic';
+        descEl.textContent = 'Your selected symptoms (such as foamy urine, frequent nighttime urination, or mild puffiness) are best evaluated during a scheduled outpatient consultation with Dr. Vigneshwaran S (6:30 PM – 10:30 PM).';
+        const waMsg = encodeURIComponent(`Hello, I would like to book an evening consultation regarding symptoms: ${symptoms.join(', ')}.`);
+        actionsEl.innerHTML = `
+          <a href="tel:+916369032050" class="btn btn-primary" style="padding:10px 18px; font-size:0.88rem;">Call +91 6369032050</a>
+          <a href="https://wa.me/916369032050?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding:10px 18px; font-size:0.88rem;">WhatsApp Clinic</a>
+        `;
+      }
 
-      document.getElementById('hydro-result').classList.add('visible');
+      document.getElementById('triage-result').classList.add('visible');
     }
+
+    // 12. First-Visit Checklist Persistence
+    function saveVisitChecklist() {
+      const state = {};
+      document.querySelectorAll('.visit-cb').forEach(cb => {
+        state[cb.id] = cb.checked;
+      });
+      try {
+        localStorage.setItem('jeyasakthi_visit_checklist', JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    function loadVisitChecklist() {
+      try {
+        const raw = localStorage.getItem('jeyasakthi_visit_checklist');
+        if (!raw) return;
+        const state = JSON.parse(raw);
+        Object.keys(state).forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.checked = !!state[id];
+        });
+      } catch (e) {}
+    }
+    loadVisitChecklist();
   </script>
 </body>
 </html>
