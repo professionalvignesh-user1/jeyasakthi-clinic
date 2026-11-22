@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Jeya Sakthi Kidney Care & General Clinic | Dr. Vigneshwaran S | Thirumullaivoyal, Chennai</title>
-  <meta name="description" content="Jeya Sakthi Kidney Care & General Clinic led by Dr. Vigneshwaran S (MBBS, MD, DrNB Nephrology). Specialized kidney care & general medical consultations in Thirumullaivoyal, serving Avadi, Ambattur & Chennai." />
+  <meta name="description" content="Jeya Sakthi Kidney Care & General Clinic led by Dr. Vigneshwaran S (MBBS, MD, DrNB Nephrology). Specialized kidney care, free kidney health calculators & general medical consultations in Thirumullaivoyal, serving Avadi, Ambattur & Chennai." />
   
   <!-- Favicon / App Icons -->
   <link rel="icon" type="image/jpeg" href="clinic logo.jpeg" />
@@ -276,12 +276,12 @@
     .nav-menu {
       display: none;
       align-items: center;
-      gap: 28px;
+      gap: 24px;
       list-style: none;
     }
     .nav-menu a {
       font-weight: 500;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--navy);
     }
     .nav-menu a:hover {
@@ -743,6 +743,261 @@
       font-size: 0.88rem;
       font-weight: 600;
       color: var(--medical-blue);
+    }
+
+    /* Interactive Kidney Health Tools Section */
+    .tools-section {
+      padding: 64px 0;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F1F6FA 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    @media (min-width: 992px) {
+      .tools-section { padding: 90px 0; }
+    }
+    .tools-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .tool-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      color: var(--navy);
+      border: 1px solid var(--border-subtle);
+      padding: 12px 20px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .tool-tab-btn i {
+      width: 17px;
+      height: 17px;
+      color: var(--medical-blue);
+    }
+    .tool-tab-btn:hover {
+      border-color: var(--medical-blue);
+      transform: translateY(-1px);
+    }
+    .tool-tab-btn.active {
+      background: var(--navy);
+      color: #FFFFFF;
+      border-color: var(--navy);
+      box-shadow: 0 6px 16px rgba(11, 37, 69, 0.2);
+    }
+    .tool-tab-btn.active i {
+      color: var(--teal);
+    }
+
+    .tool-panel {
+      display: none;
+      max-width: 920px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-lg);
+      padding: 26px 20px;
+      animation: fadeInTool 0.3s ease;
+    }
+    @media (min-width: 768px) {
+      .tool-panel { padding: 38px 40px; }
+    }
+    .tool-panel.active {
+      display: block;
+    }
+    @keyframes fadeInTool {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .tool-header {
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .tool-header h3 {
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+    .tool-header p {
+      font-size: 0.92rem;
+    }
+
+    .tool-form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+    @media (min-width: 640px) {
+      .tool-form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--navy);
+    }
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #CBD5E1;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background-color: #FFFFFF;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--medical-blue);
+      box-shadow: 0 0 0 3px rgba(19, 99, 223, 0.14);
+    }
+    .input-with-unit {
+      display: flex;
+      gap: 8px;
+    }
+    .input-with-unit .form-control {
+      flex: 1;
+    }
+    .input-with-unit select.form-control {
+      flex: 0 0 115px;
+    }
+
+    .tool-result-box {
+      display: none;
+      margin-top: 24px;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: var(--bg-slate);
+      border-left: 5px solid var(--medical-blue);
+    }
+    .tool-result-box.visible {
+      display: block;
+    }
+    .result-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .badge-normal { background: #DCFCE7; color: #166534; }
+    .badge-mild { background: #FEF9C3; color: #854D0E; }
+    .badge-moderate { background: #FFEDD5; color: #9A3412; }
+    .badge-high { background: #FEE2E2; color: #991B1B; }
+
+    .result-metric {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .result-desc {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+    .result-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* Risk Quiz Checklist */
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .quiz-check-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-light);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .quiz-check-card:hover {
+      border-color: var(--medical-blue);
+      background: #FFFFFF;
+    }
+    .quiz-check-card input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--medical-blue);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .quiz-check-text strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-family: var(--font-display);
+    }
+    .quiz-check-text span {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    /* Urine Color Swatches */
+    .urine-scale-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .urine-swatch {
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1E293B;
+    }
+
+    .tool-disclaimer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-subtle);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .tool-disclaimer i {
+      width: 15px;
+      height: 15px;
+      color: var(--medical-blue);
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     /* Dedicated Kidney Health Section */
@@ -1382,7 +1637,7 @@
     </div>
   </div>
 
-  <!-- Sticky Header with Fixed Dual-Icon Button -->
+  <!-- Sticky Header -->
   <header>
     <div class="nav-container">
       <a href="#" class="brand" aria-label="Jeya Sakthi Clinic Home">
@@ -1398,6 +1653,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about-doctor">About Doctor</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#health-tools">Kidney Tools</a></li>
           <li><a href="#kidney-care">Kidney Care</a></li>
           <li><a href="#faqs">FAQs</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -1421,6 +1677,7 @@
         <li><a href="#home" class="mobile-nav-link">Home</a></li>
         <li><a href="#about-doctor" class="mobile-nav-link">About Doctor</a></li>
         <li><a href="#services" class="mobile-nav-link">Services</a></li>
+        <li><a href="#health-tools" class="mobile-nav-link">Kidney Health Tools</a></li>
         <li><a href="#kidney-care" class="mobile-nav-link">Kidney Care</a></li>
         <li><a href="#faqs" class="mobile-nav-link">FAQs</a></li>
         <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
@@ -1448,8 +1705,8 @@
             <a href="#contact" class="btn btn-primary">
               <i data-lucide="calendar"></i> Book Consultation
             </a>
-            <a href="tel:+916369032050" class="btn btn-secondary">
-              <i data-lucide="phone"></i> Call Clinic
+            <a href="#health-tools" class="btn btn-secondary">
+              <i data-lucide="calculator"></i> Kidney Health Tools
             </a>
             <a href="https://maps.app.goo.gl/H48VQ96t9MUNQTVd6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
               <i data-lucide="navigation"></i> Directions
@@ -1650,6 +1907,270 @@
           <a href="#contact" class="service-link">
             Learn More <i data-lucide="arrow-right" style="width:15px; height:15px;"></i>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Kidney Health Tools Section -->
+  <section class="tools-section" id="health-tools">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-eyebrow">Interactive Patient Utilities</span>
+        <h2>Kidney Health Check &amp; Calculators</h2>
+        <p>Use these educational tools to check your estimated kidney function, screen risk factors, or verify blood pressure and blood sugar targets before your consultation.</p>
+      </div>
+
+      <!-- Tool Selector Tabs -->
+      <div class="tools-tabs" role="tablist">
+        <button class="tool-tab-btn active" data-tool="egfr-tool" role="tab">
+          <i data-lucide="calculator"></i> eGFR Calculator
+        </button>
+        <button class="tool-tab-btn" data-tool="risk-tool" role="tab">
+          <i data-lucide="clipboard-check"></i> Kidney Risk Screener
+        </button>
+        <button class="tool-tab-btn" data-tool="vitals-tool" role="tab">
+          <i data-lucide="heart-pulse"></i> BP &amp; Sugar Checker
+        </button>
+        <button class="tool-tab-btn" data-tool="hydration-tool" role="tab">
+          <i data-lucide="droplets"></i> Hydration Guide
+        </button>
+      </div>
+
+      <!-- Tool 1: eGFR Calculator (CKD-EPI 2021) -->
+      <div class="tool-panel active" id="egfr-tool">
+        <div class="tool-header">
+          <h3>eGFR Kidney Function Calculator (CKD-EPI 2021)</h3>
+          <p>Estimate your Glomerular Filtration Rate using your latest blood test Serum Creatinine value.</p>
+        </div>
+
+        <div class="tool-form-grid">
+          <div class="form-group">
+            <label for="egfr-age">Age (Years)</label>
+            <input type="number" id="egfr-age" class="form-control" min="18" max="110" placeholder="e.g. 45" />
+          </div>
+
+          <div class="form-group">
+            <label for="egfr-sex">Biological Sex</label>
+            <select id="egfr-sex" class="form-control">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="egfr-creat">Serum Creatinine (from lab report)</label>
+            <div class="input-with-unit">
+              <input type="number" id="egfr-creat" class="form-control" step="0.01" min="0.1" max="30" placeholder="e.g. 1.1" />
+              <select id="egfr-unit" class="form-control">
+                <option value="mgdl">mg/dL</option>
+                <option value="umol">µmol/L</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="calculateEGFR()">
+          <i data-lucide="activity"></i> Calculate eGFR
+        </button>
+
+        <div class="tool-result-box" id="egfr-result">
+          <span class="result-badge" id="egfr-badge">Stage</span>
+          <div class="result-metric" id="egfr-value">-- mL/min/1.73m²</div>
+          <p class="result-desc" id="egfr-desc"></p>
+          <div class="result-actions">
+            <a id="egfr-wa-link" href="#contact" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">
+              <i data-lucide="message-circle"></i> Share Result with Clinic on WhatsApp
+            </a>
+            <a href="#contact" class="btn btn-secondary" style="padding: 10px 18px; font-size: 0.88rem;">
+              Book Consultation
+            </a>
+          </div>
+        </div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span>Uses the standard 2021 CKD-EPI race-free creatinine equation for adults (18+). Lab values should always be interpreted alongside urine protein (ACR) and clinical history by a nephrologist.</span>
+        </div>
+      </div>
+
+      <!-- Tool 2: Kidney Risk Self-Assessment Quiz -->
+      <div class="tool-panel" id="risk-tool">
+        <div class="tool-header">
+          <h3>Kidney Health Risk Self-Assessment</h3>
+          <p>Select any health conditions or symptoms that currently apply to you to understand if a preventive kidney checkup is advisable.</p>
+        </div>
+
+        <div class="quiz-options">
+          <label class="quiz-check-card">
+            <input type="checkbox" class="risk-factor-cb" value="2" data-label="Diabetes" />
+            <div class="quiz-check-text">
+              <strong>Diabetes (Type 1 or Type 2)</strong>
+              <span>High blood sugar over time is one of the leading causes of kidney strain.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="risk-factor-cb" value="2" data-label="High Blood Pressure" />
+            <div class="quiz-check-text">
+              <strong>High Blood Pressure (Hypertension)</strong>
+              <span>Uncontrolled BP puts extra pressure on delicate kidney blood vessels.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="risk-factor-cb" value="2" data-label="Swelling or Foamy Urine" />
+            <div class="quiz-check-text">
+              <strong>Swelling in Feet/Ankles or Persistent Foamy Urine</strong>
+              <span>Can be an early indicator of fluid retention or protein leakage in urine.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="risk-factor-cb" value="1" data-label="Family History of Kidney Disease" />
+            <div class="quiz-check-text">
+              <strong>Family History of Kidney Disease</strong>
+              <span>Parent or sibling with chronic kidney disease, dialysis, or polycystic kidneys.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="risk-factor-cb" value="1" data-label="Frequent Painkiller Use" />
+            <div class="quiz-check-text">
+              <strong>Frequent Use of Over-the-Counter Painkillers (NSAIDs)</strong>
+              <span>Regular use of certain pain medications can reduce blood flow to the kidneys.</span>
+            </div>
+          </label>
+
+          <label class="quiz-check-card">
+            <input type="checkbox" class="risk-factor-cb" value="1" data-label="Kidney Stones or Recurring UTIs" />
+            <div class="quiz-check-text">
+              <strong>History of Kidney Stones or Recurrent Urinary Infections</strong>
+              <span>Repeated blockages or infections benefit from periodic monitoring.</span>
+            </div>
+          </label>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="evaluateRisk()">
+          <i data-lucide="shield-check"></i> Check My Risk Level
+        </button>
+
+        <div class="tool-result-box" id="risk-result">
+          <span class="result-badge" id="risk-badge">Risk Level</span>
+          <div class="result-metric" id="risk-title">--</div>
+          <p class="result-desc" id="risk-desc"></p>
+          <div class="result-actions">
+            <a id="risk-wa-link" href="#contact" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">
+              <i data-lucide="message-circle"></i> Discuss Risk Factors on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span>Early kidney changes often have no noticeable symptoms. Routine blood (Creatinine) and urine tests help detect issues early.</span>
+        </div>
+      </div>
+
+      <!-- Tool 3: BP & Blood Sugar Kidney-Target Checker -->
+      <div class="tool-panel" id="vitals-tool">
+        <div class="tool-header">
+          <h3>Blood Pressure &amp; Blood Sugar Kidney-Target Checker</h3>
+          <p>Managing blood pressure and blood glucose is essential to protecting long-term kidney health. Check your latest readings below.</p>
+        </div>
+
+        <div class="tool-form-grid">
+          <div class="form-group">
+            <label for="bp-sys">Systolic BP (Upper Number, mmHg)</label>
+            <input type="number" id="bp-sys" class="form-control" min="60" max="260" placeholder="e.g. 124" />
+          </div>
+
+          <div class="form-group">
+            <label for="bp-dia">Diastolic BP (Lower Number, mmHg)</label>
+            <input type="number" id="bp-dia" class="form-control" min="40" max="160" placeholder="e.g. 80" />
+          </div>
+
+          <div class="form-group">
+            <label for="sugar-val">Blood Sugar Reading (mg/dL) — Optional</label>
+            <input type="number" id="sugar-val" class="form-control" min="30" max="600" placeholder="e.g. 110" />
+          </div>
+
+          <div class="form-group">
+            <label for="sugar-type">Blood Sugar Timing</label>
+            <select id="sugar-type" class="form-control">
+              <option value="fasting">Fasting (Empty Stomach)</option>
+              <option value="pp">Post-Prandial (2 hrs after meal)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="checkVitals()">
+          <i data-lucide="heart-pulse"></i> Analyze Readings
+        </button>
+
+        <div class="tool-result-box" id="vitals-result">
+          <span class="result-badge" id="vitals-badge">Summary</span>
+          <div class="result-metric" id="vitals-title">--</div>
+          <p class="result-desc" id="vitals-desc"></p>
+          <div class="result-actions">
+            <a href="#contact" class="btn btn-primary" style="padding: 10px 18px; font-size: 0.88rem;">
+              Schedule Vitals Review with Dr. Vigneshwaran S
+            </a>
+          </div>
+        </div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="info"></i>
+          <span>General adult reference ranges are shown. Individualized blood pressure and HbA1c targets vary based on age and existing medical conditions.</span>
+        </div>
+      </div>
+
+      <!-- Tool 4: Daily Hydration & Urine Color Guide -->
+      <div class="tool-panel" id="hydration-tool">
+        <div class="tool-header">
+          <h3>Daily Hydration Estimator &amp; Urine Color Guide</h3>
+          <p>Estimate general daily fluid needs for healthy kidneys and compare urine color indicators.</p>
+        </div>
+
+        <div class="tool-form-grid">
+          <div class="form-group">
+            <label for="hydro-weight">Body Weight (kg)</label>
+            <input type="number" id="hydro-weight" class="form-control" min="20" max="200" placeholder="e.g. 68" />
+          </div>
+
+          <div class="form-group">
+            <label for="hydro-activity">Daily Climate / Activity Level</label>
+            <select id="hydro-activity" class="form-control">
+              <option value="normal">Normal / Indoor Routine</option>
+              <option value="warm">Warm Weather / Outdoor Work (Chennai Climate)</option>
+              <option value="active">Regular Exercise / Heavy Sweating</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="calculateHydration()">
+          <i data-lucide="droplets"></i> Estimate Daily Water Intake
+        </button>
+
+        <div class="tool-result-box" id="hydro-result">
+          <span class="result-badge badge-normal">General Healthy Adult Estimate</span>
+          <div class="result-metric" id="hydro-value">-- Liters / day</div>
+          <p class="result-desc" id="hydro-desc"></p>
+        </div>
+
+        <div style="margin-top: 24px;">
+          <h4 style="font-size: 0.98rem; margin-bottom: 6px;">Quick Urine Hydration Color Guide</h4>
+          <div class="urine-scale-grid">
+            <div class="urine-swatch" style="background: #FEFCE8;">Pale Straw<br><span style="font-weight:400; color:#475569;">Well Hydrated</span></div>
+            <div class="urine-swatch" style="background: #FEF08A;">Transparent Yellow<br><span style="font-weight:400; color:#475569;">Normal</span></div>
+            <div class="urine-swatch" style="background: #FDE047;">Dark Yellow<br><span style="font-weight:400; color:#475569;">Drink Water Soon</span></div>
+            <div class="urine-swatch" style="background: #F59E0B; color:#FFFFFF;">Amber / Honey<br><span style="font-weight:400; color:#FFFBEB;">Dehydrated</span></div>
+          </div>
+        </div>
+
+        <div class="tool-disclaimer">
+          <i data-lucide="alert-circle"></i>
+          <span><strong>Important Medical Note:</strong> If you have Chronic Kidney Disease (CKD), heart failure, swelling, or are on dialysis, your doctor may prescribe a strict daily fluid limit. Do not increase water intake without consulting your doctor.</span>
         </div>
       </div>
     </div>
@@ -2081,6 +2602,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about-doctor">About Doctor</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#health-tools">Kidney Health Tools</a></li>
             <li><a href="#kidney-care">Kidney Care</a></li>
             <li><a href="#faqs">FAQs</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -2142,7 +2664,7 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
-    // Fixed Mobile Hamburger Menu Toggle
+    // Mobile Hamburger Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const mobileDrawer = document.getElementById('mobileDrawer');
     const iconHamburger = menuToggle.querySelector('.icon-hamburger');
@@ -2165,7 +2687,6 @@
       setMenuState(!isOpen);
     });
 
-    // Close drawer when any navigation link is clicked
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
       link.addEventListener('click', () => {
         setMenuState(false);
@@ -2184,6 +2705,218 @@
         }
       });
     });
+
+    // Health Tools Tab Switcher
+    const tabBtns = document.querySelectorAll('.tool-tab-btn');
+    const toolPanels = document.querySelectorAll('.tool-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tool');
+        tabBtns.forEach(b => b.classList.remove('active'));
+        toolPanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+
+    // 1. CKD-EPI 2021 eGFR Calculator
+    function calculateEGFR() {
+      const age = parseFloat(document.getElementById('egfr-age').value);
+      const sex = document.getElementById('egfr-sex').value;
+      const rawCreat = parseFloat(document.getElementById('egfr-creat').value);
+      const unit = document.getElementById('egfr-unit').value;
+
+      if (!age || age < 18 || age > 120 || !rawCreat || rawCreat <= 0) {
+        alert('Please enter a valid adult age (18+) and serum creatinine value.');
+        return;
+      }
+
+      const scr = unit === 'umol' ? rawCreat / 88.4 : rawCreat;
+      const kappa = sex === 'female' ? 0.7 : 0.9;
+      const alpha = sex === 'female' ? -0.241 : -0.302;
+      const sexFactor = sex === 'female' ? 1.012 : 1.0;
+
+      const minTerm = Math.min(scr / kappa, 1);
+      const maxTerm = Math.max(scr / kappa, 1);
+
+      const egfr = Math.round(
+        142 * Math.pow(minTerm, alpha) * Math.pow(maxTerm, -1.200) * Math.pow(0.9938, age) * sexFactor
+      );
+
+      let stage = '';
+      let badgeClass = 'badge-normal';
+      let desc = '';
+
+      if (egfr >= 90) {
+        stage = 'Stage G1 — Normal or High';
+        badgeClass = 'badge-normal';
+        desc = 'An eGFR of 90 or above indicates normal kidney filtration capacity, provided there are no other signs of kidney damage (such as protein in the urine).';
+      } else if (egfr >= 60) {
+        stage = 'Stage G2 — Mildly Decreased';
+        badgeClass = 'badge-mild';
+        desc = 'An eGFR between 60 and 89 shows mildly reduced kidney filtration. If you have diabetes or high blood pressure, periodic monitoring is recommended.';
+      } else if (egfr >= 45) {
+        stage = 'Stage G3a — Mild to Moderate Decrease';
+        badgeClass = 'badge-moderate';
+        desc = 'An eGFR between 45 and 59 indicates mild-to-moderate reduction in kidney function. A nephrology consultation is recommended to protect remaining kidney function.';
+      } else if (egfr >= 30) {
+        stage = 'Stage G3b — Moderate to Severe Decrease';
+        badgeClass = 'badge-moderate';
+        desc = 'An eGFR between 30 and 44 requires structured nephrology care, medication review, and blood pressure/blood sugar management.';
+      } else if (egfr >= 15) {
+        stage = 'Stage G4 — Severely Decreased';
+        badgeClass = 'badge-high';
+        desc = 'An eGFR between 15 and 29 reflects severely reduced kidney function. Prompt evaluation by a nephrologist is strongly advised.';
+      } else {
+        stage = 'Stage G5 — Kidney Failure Range';
+        badgeClass = 'badge-high';
+        desc = 'An eGFR below 15 indicates advanced kidney failure. Please consult a nephrologist promptly for specialized medical management.';
+      }
+
+      const badgeEl = document.getElementById('egfr-badge');
+      badgeEl.textContent = stage;
+      badgeEl.className = 'result-badge ' + badgeClass;
+
+      document.getElementById('egfr-value').textContent = egfr + ' mL/min/1.73m²';
+      document.getElementById('egfr-desc').textContent = desc;
+
+      const waMsg = encodeURIComponent(
+        `Hello Dr. Vigneshwaran S, I used the eGFR calculator on your website (Age: ${age}, Sex: ${sex}, Creatinine: ${rawCreat} ${unit === 'umol' ? 'µmol/L' : 'mg/dL'}, Estimated eGFR: ${egfr} mL/min/1.73m²). I would like to book a consultation.`
+      );
+      document.getElementById('egfr-wa-link').href = `https://wa.me/916369032050?text=${waMsg}`;
+
+      document.getElementById('egfr-result').classList.add('visible');
+    }
+
+    // 2. Kidney Risk Self-Assessment
+    function evaluateRisk() {
+      const checkboxes = document.querySelectorAll('.risk-factor-cb:checked');
+      let score = 0;
+      const selectedLabels = [];
+
+      checkboxes.forEach(cb => {
+        score += parseInt(cb.value, 10);
+        selectedLabels.push(cb.getAttribute('data-label'));
+      });
+
+      const badgeEl = document.getElementById('risk-badge');
+      const titleEl = document.getElementById('risk-title');
+      const descEl = document.getElementById('risk-desc');
+
+      if (score === 0) {
+        badgeEl.textContent = 'Lower Risk Profile';
+        badgeEl.className = 'result-badge badge-normal';
+        titleEl.textContent = 'No Major Selected Risk Factors';
+        descEl.textContent = 'You did not select any common kidney risk factors. Maintaining balanced hydration, healthy blood pressure, and annual preventive checkups helps keep kidneys healthy.';
+      } else if (score <= 2) {
+        badgeEl.textContent = 'Moderate Awareness Needed';
+        badgeEl.className = 'result-badge badge-mild';
+        titleEl.textContent = `${selectedLabels.length} Risk Factor(s) Identified`;
+        descEl.textContent = `Selected: ${selectedLabels.join(', ')}. Individuals with these factors benefit from routine urine protein and serum creatinine screening during a general medical consultation.`;
+      } else {
+        badgeEl.textContent = 'Higher Priority for Kidney Screening';
+        badgeEl.className = 'result-badge badge-high';
+        titleEl.textContent = `${selectedLabels.length} Key Risk Factors Identified`;
+        descEl.textContent = `Selected: ${selectedLabels.join(', ')}. Because multiple risk factors or symptoms are present, scheduling a dedicated kidney health evaluation with Dr. Vigneshwaran S is recommended.`;
+      }
+
+      const factorSummary = selectedLabels.length ? selectedLabels.join(', ') : 'General preventive checkup';
+      const waMsg = encodeURIComponent(
+        `Hello, I completed the Kidney Risk Self-Assessment on Jeya Sakthi Clinic's website (Factors: ${factorSummary}) and would like to enquire about a consultation.`
+      );
+      document.getElementById('risk-wa-link').href = `https://wa.me/916369032050?text=${waMsg}`;
+
+      document.getElementById('risk-result').classList.add('visible');
+    }
+
+    // 3. BP & Blood Sugar Checker
+    function checkVitals() {
+      const sys = parseFloat(document.getElementById('bp-sys').value);
+      const dia = parseFloat(document.getElementById('bp-dia').value);
+      const sugar = parseFloat(document.getElementById('sugar-val').value);
+      const sugarType = document.getElementById('sugar-type').value;
+
+      if (!sys || !dia) {
+        alert('Please enter both Systolic and Diastolic Blood Pressure readings.');
+        return;
+      }
+
+      let bpStatus = '';
+      let badgeClass = 'badge-normal';
+      let notes = [];
+
+      if (sys < 120 && dia < 80) {
+        bpStatus = `BP ${sys}/${dia} mmHg — Normal Range`;
+        notes.push('Your blood pressure is in a healthy, kidney-protective range.');
+      } else if (sys < 130 && dia < 80) {
+        bpStatus = `BP ${sys}/${dia} mmHg — Elevated`;
+        badgeClass = 'badge-mild';
+        notes.push('Slightly elevated blood pressure. Low-salt diet, regular walking, and periodic monitoring are helpful.');
+      } else if (sys < 140 || dia < 90) {
+        bpStatus = `BP ${sys}/${dia} mmHg — Stage 1 Hypertension Range`;
+        badgeClass = 'badge-moderate';
+        notes.push('Sustained blood pressure at this level increases long-term strain on kidney blood vessels. Medical review is advisable.');
+      } else {
+        bpStatus = `BP ${sys}/${dia} mmHg — Elevated Hypertension Range`;
+        badgeClass = 'badge-high';
+        notes.push('High blood pressure requires timely medical evaluation to protect both heart and kidney function.');
+      }
+
+      if (sugar && sugar > 0) {
+        if (sugarType === 'fasting') {
+          if (sugar < 100) notes.push(`Fasting Sugar (${sugar} mg/dL) is within the normal range.`);
+          else if (sugar <= 125) {
+            notes.push(`Fasting Sugar (${sugar} mg/dL) is in the pre-diabetic range.`);
+            if (badgeClass === 'badge-normal') badgeClass = 'badge-mild';
+          } else {
+            notes.push(`Fasting Sugar (${sugar} mg/dL) is in the diabetic range — good glucose control is vital to prevent diabetic kidney disease.`);
+            badgeClass = 'badge-high';
+          }
+        } else {
+          if (sugar < 140) notes.push(`Post-meal Sugar (${sugar} mg/dL) is within the normal range.`);
+          else if (sugar <= 199) {
+            notes.push(`Post-meal Sugar (${sugar} mg/dL) is elevated.`);
+            if (badgeClass === 'badge-normal') badgeClass = 'badge-mild';
+          } else {
+            notes.push(`Post-meal Sugar (${sugar} mg/dL) is high and warrants medical review.`);
+            badgeClass = 'badge-high';
+          }
+        }
+      }
+
+      const badgeEl = document.getElementById('vitals-badge');
+      badgeEl.textContent = 'Vitals Assessment';
+      badgeEl.className = 'result-badge ' + badgeClass;
+
+      document.getElementById('vitals-title').textContent = bpStatus;
+      document.getElementById('vitals-desc').textContent = notes.join(' ');
+      document.getElementById('vitals-result').classList.add('visible');
+    }
+
+    // 4. Daily Hydration Estimator
+    function calculateHydration() {
+      const weight = parseFloat(document.getElementById('hydro-weight').value);
+      const activity = document.getElementById('hydro-activity').value;
+
+      if (!weight || weight < 20 || weight > 250) {
+        alert('Please enter a valid body weight in kilograms.');
+        return;
+      }
+
+      let baseLiters = weight * 0.032;
+      if (activity === 'warm') baseLiters += 0.4;
+      if (activity === 'active') baseLiters += 0.75;
+
+      const low = (baseLiters - 0.2).toFixed(1);
+      const high = (baseLiters + 0.2).toFixed(1);
+
+      document.getElementById('hydro-value').textContent = `${low} – ${high} Liters / day`;
+      document.getElementById('hydro-desc').textContent =
+        `For a healthy adult weighing ${weight} kg without fluid restrictions, spreading approximately ${low} to ${high} liters of water evenly across the day supports normal waste filtration and helps reduce kidney stone risk.`;
+
+      document.getElementById('hydro-result').classList.add('visible');
+    }
   </script>
 </body>
 </html>
